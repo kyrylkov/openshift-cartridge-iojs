@@ -1,8 +1,8 @@
 #!/bin/bash
 
 function update_runtime {
-  if [ -f "$OPENSHIFT_REPO_DIR/.openshift/NODE_VERSION_URL" ]; then
-    local VERSION_URL=$(cat $OPENSHIFT_REPO_DIR/.openshift/NODE_VERSION_URL)
+  if [ -f "$OPENSHIFT_REPO_DIR/.openshift/IOJS_VERSION_URL" ]; then
+    local VERSION_URL=$(cat $OPENSHIFT_REPO_DIR/.openshift/IOJS_VERSION_URL)
   else
     local VERSION_URL="https://semver.io/iojs/stable"
   fi
