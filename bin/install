@@ -16,4 +16,12 @@ echo ${TMP}                                    > env/npm_config_tmp
 
 update_runtime
 
+# npm keeps per-user config in ~/.npmrc and cache in ~/.npm/  and
+# node-gyp (add-on build tool) uses ~/.node-gyp
+# Create files/directories, change ownership and SELinux file security context.
+touch "$OPENSHIFT_HOMEDIR"/.npmrc
+mkdir "$OPENSHIFT_HOMEDIR"/.node-gyp
+chown `id -u $OPENSHIFT_GEAR_UUID` -R "$OPENSHIFT_HOMEDIR"/.npmrc "$OPENSHIFT_HOMEDIR"/.node-gyp
+npm config set tmp $OPENSHIFT_TMP_DIR
+
 client_result "io.js $(node --version) and npm $(npm --version) installed."
