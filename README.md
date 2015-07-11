@@ -1,20 +1,20 @@
 # Custom io.js cartridge for OpenShift
 
-This is a custom io.js cartridge that **takes care of auto-updating the io.js and npm versions** on each build.
+This is a custom `io.js` cartridge that **takes care of auto-updating the `io.js` and `npm` versions** on each build.
 
-By default, the io.js version is determined by querying [semver.io/iojs/stable](https://semver.io/iojs/stable).
+By default, the `io.js` version is determined by querying [semver.io/iojs/stable](https://semver.io/iojs/stable).
 
-A different URL can be specified in your application's repository, in the `.openshift/IOJS_VERSION_URL` file. For instance, you'd get the **latest 1.x.x** (1.8.4 as of July 11, 2015) by putting this in `.openshift/IOJS_VERSION_URL`:
+A different URL can be specified in your application repository in the `.openshift/IOJS_VERSION_URL` file. For instance, you'd get the **latest 1.x.x** (1.8.4 as of July 11, 2015) by putting this in `.openshift/IOJS_VERSION_URL`:
 
     https://semver.io/iojs/resolve/1.x.x
 
 ## Why
 
-Because there is not standard OpenShift io.js cartridge.
+Because there is no standard OpenShift `io.js` cartridge.
 
 ## When to use
 
-When you need to run your application in OpenShift using the latest io.js version.
+When you need to run your application in OpenShift using `io.js`.
 
 ## How to
 
@@ -34,6 +34,5 @@ Alternatively use:
 
 ## Notes
 
-- The cartridge not guaranteed to be production-ready
-- This is a lean cartridge. No additional modules are installed. Which means that - unlike the standard Node.js cartridge - it won't install [supervisor](https://github.com/isaacs/node-supervisor) for you. You'll have to implement your own logic to auto-restart on errors. The [provided application template](https://github.com/icflorescu/openshift-cartridge-nodejs/blob/master/usr/template/start.js) is using [cluster](http://nodejs.org/api/cluster.html) for that.
-- The cartridge will run `iojs start.js` on start, so **make sure your application entrypoint is `start.js`**.
+- The cartridge is not guaranteed to be production-ready
+- No additional modules are installed, which means that - unlike the standard Node.js cartridge - it won't install [supervisor](https://github.com/isaacs/node-supervisor) for you. You'll have to implement your own logic to auto-restart on errors. The [provided application template](https://github.com/icflorescu/openshift-cartridge-nodejs/blob/master/usr/template/start.js) is using [cluster](http://nodejs.org/api/cluster.html) for that.
