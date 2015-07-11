@@ -14,6 +14,6 @@ echo ${OPENSHIFT_DATA_DIR}.iojs/.npmignore     > env/npm_config_userignorefile
 echo ${OPENSHIFT_DATA_DIR}.iojs/.npm-init.js   > env/npm_config_init_module
 echo ${TMP}                                    > env/npm_config_tmp
 
-update_iojs
+update_runtime
 
 client_result "io.js $(node --version) and NPM $(npm --version) installed."
