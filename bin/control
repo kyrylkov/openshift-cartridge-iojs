@@ -1,10 +1,10 @@
 #!/bin/bash
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
-source $HOME/nodejs/lib/util
+source $HOME/iojs/lib/util
 
 function is_running() {
-  if [ ! -z "$(ps -ef | grep 'node --harmony start.js' | grep -v grep)" ]; then
+  if [ ! -z "$(ps -ef | grep 'iojs start.js' | grep -v grep)" ]; then
     return 0
   else
     return 1
@@ -18,7 +18,7 @@ function pre-repo-archive() {
 }
 
 function build() {
-  update_nodejs
+  update_iojs
   local INIT_DIR=`pwd`
   cd ${OPENSHIFT_REPO_DIR}
   if [ -d ${TMP}node_modules ]; then
@@ -27,7 +27,7 @@ function build() {
   npm prune
   npm i
   cd ${INIT_DIR}
-  client_result 'Node.js modules installed.'
+  client_result 'io.js modules installed.'
 }
 
 function start() {
@@ -36,17 +36,17 @@ function start() {
   if is_running; then
     client_result 'Application is already running.'
   else
-    client_message 'Starting Node.js application...'
-    nohup node --harmony start.js |& /usr/bin/logshifter -tag nodejs &
+    client_message 'Starting io.js application...'
+    nohup iojs start.js |& /usr/bin/logshifter -tag iojs &
     i=0
     while ! is_running && [ $i -lt 60 ]; do
       sleep 1
       i=$(($i + 1))
     done
     if is_running; then
-      client_result 'Node.js application started.'
+      client_result 'io.js application started.'
     else
-      client_result 'Warning! Could not start Node.js application!'
+      client_result 'Warning! Could not start io.js application!'
       exit 1
     fi
   fi
@@ -57,18 +57,18 @@ function stop() {
   if ! is_running; then
     client_result 'Application is already stopped.'
   else
-    client_message 'Stopping Node.js application...'
-    kill $(ps -ef | grep 'node --harmony start.js' | grep -v grep | awk '{ print $2 }') > /dev/null 2>&1
+    client_message 'Stopping io.js application...'
+    kill $(ps -ef | grep 'iojs start.js' | grep -v grep | awk '{ print $2 }') > /dev/null 2>&1
     i=0
     while is_running && [ $i -lt 60 ]; do
       sleep 1
       i=$(($i + 1))
     done
     if is_running; then
-      client_result 'Warning! Could not stop Node.js application!'
+      client_result 'Warning! Could not stop io.js application!'
       exit 1
     else
-      client_result 'Node.js application stopped.'
+      client_result 'io.js application stopped.'
     fi
   fi
 }
@@ -80,9 +80,9 @@ function restart() {
 
 function status() {
   if is_running; then
-    client_result 'Node.js application appears to be running.'
+    client_result 'io.js application appears to be running.'
   else
-    client_result 'Node.js application appears to be stopped.'
+    client_result 'io.js application appears to be stopped.'
   fi
 }
 
