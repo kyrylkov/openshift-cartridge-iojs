@@ -1,8 +1,22 @@
 {
-  "name": "openshift-cartridge-nodejs",
-  "version": "0.0.1",
-  "description": "A test application",
-  "main": "start.js",
+  "name": "openshift-cartridge-iojs",
+  "version": "1.0.0",
+  "description": "io.js OpenShift Cartridge Test Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "iojs server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kyrylkov/openshift-cartridge-iojs"
+  },
   "author": "Ionut-Cristian Florescu <ionut.florescu@gmail.com>",
+  "contributors": [
+    {
+      "name": "Sergiy Kyrylkov",
+      "email": "kyrylkov@gmail.com",
+      "url": "http://kyrylkov.com/"
+    }
+  ],
   "license": "MIT"
 }
