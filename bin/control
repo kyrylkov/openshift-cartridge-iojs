@@ -4,7 +4,7 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 source $HOME/iojs/lib/util
 
 function is_running() {
-  if [ ! -z "$(ps -ef | grep 'iojs' | grep -v grep)" ]; then
+  if [ ! -z "$(ps -ef | grep 'iojs server.js' | grep -v grep)" ]; then
     return 0
   else
     return 1
