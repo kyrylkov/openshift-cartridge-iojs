@@ -4,7 +4,7 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 source $HOME/iojs/lib/util
 
 function is_running() {
-  if [ ! -z "$(ps -ef | grep 'iojs start.js' | grep -v grep)" ]; then
+  if [ ! -z "$(ps -ef | grep 'iojs' | grep -v grep)" ]; then
     return 0
   else
     return 1
@@ -37,7 +37,7 @@ function start() {
     client_result 'Application is already running.'
   else
     client_message 'Starting io.js application...'
-    nohup iojs start.js |& /usr/bin/logshifter -tag iojs &
+    nohup npm start |& /usr/bin/logshifter -tag npm &
     i=0
     while ! is_running && [ $i -lt 60 ]; do
       sleep 1
@@ -58,7 +58,7 @@ function stop() {
     client_result 'Application is already stopped.'
   else
     client_message 'Stopping io.js application...'
-    kill $(ps -ef | grep 'iojs start.js' | grep -v grep | awk '{ print $2 }') > /dev/null 2>&1
+    kill $(ps -ef | grep 'iojs' | grep -v grep | awk '{ print $2 }') > /dev/null 2>&1
     i=0
     while is_running && [ $i -lt 60 ]; do
       sleep 1
