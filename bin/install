@@ -16,4 +16,4 @@ echo ${TMP}                                    > env/npm_config_tmp
 
 update_runtime
 
-client_result "io.js $(node --version) and NPM $(npm --version) installed."
+client_result "io.js $(node --version) and npm $(npm --version) installed."
