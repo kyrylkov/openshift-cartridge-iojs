@@ -2,7 +2,7 @@
 
 This is a custom io.js cartridge that **takes care of auto-updating the io.js and npm versions** on each build.
 
-By default, the io.js version is determined by querying [semver.io/node/stable](https://semver.io/node/stable).
+By default, the io.js version is determined by querying [semver.io/iojs/stable](https://semver.io/iojs/stable).
 
 A different URL can be specified in your application's repository, in the `.openshift/IOJS_VERSION_URL` file. For instance, you'd get the **latest 1.x.x** (1.8.4 as of July 11, 2015) by putting this in `.openshift/IOJS_VERSION_URL`:
 
@@ -18,9 +18,13 @@ When you need to run your application in OpenShift using the latest io.js versio
 
 ## How to
 
-Go to [Choose a type of application](https://openshift.redhat.com/app/console/application_types) in your OpenShift Online account, paste the URL below into "Code Anything" textbox at the bottom of the page and click "Next".
+Go to [Choose a type of application](https://openshift.redhat.com/app/console/application_types) in your OpenShift Online account, paste the URL below into "Code Anything" textbox at the bottom of the page and click "Next":
 
     https://raw.githubusercontent.com/kyrylkov/openshift-cartridge-iojs/master/metadata/manifest.yml
+    
+Alternatively use:
+
+    rhc app create <app_name> https://raw.githubusercontent.com/kyrylkov/openshift-cartridge-iojs/master/metadata/manifest.yml
 
 ## Features
 
