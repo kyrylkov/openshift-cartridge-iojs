@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
-source $HOME/nodejs/lib/util
+source $HOME/iojs/lib/util
 
 # Add environment variables
 echo production                                > env/NODE_ENV
@@ -14,6 +14,6 @@ echo ${OPENSHIFT_DATA_DIR}.nodejs/.npmignore   > env/npm_config_userignorefile
 echo ${OPENSHIFT_DATA_DIR}.nodejs/.npm-init.js > env/npm_config_init_module
 echo ${TMP}                                    > env/npm_config_tmp
 
-update_nodejs
+update_iojs
 
-client_result "Node.js $(node --version) and NPM $(npm --version) installed."
+client_result "io.js $(node --version) and NPM $(npm --version) installed."
