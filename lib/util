@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function update_iojs {
+function update_runtime {
   if [ -f "$OPENSHIFT_REPO_DIR/.openshift/NODE_VERSION_URL" ]; then
     local VERSION_URL=$(cat $OPENSHIFT_REPO_DIR/.openshift/NODE_VERSION_URL)
   else
@@ -33,12 +33,12 @@ function update_iojs {
     rm ${OPENSHIFT_DATA_DIR}tmp.tgz
 
     # Output result
-    echo "io.js updated to $(node --version) with npm $(npm --version)."
+    echo "io.js updated to $(iojs --version) with npm $(npm --version)."
   fi
 
   # Update global npm if necessary
   if [ $(npm view npm version) != $(npm --version) ]; then
     npm i -g npm
-    echo "Npm updated to $(npm --version)."
+    echo "npm updated to $(npm --version)."
   fi
 }
