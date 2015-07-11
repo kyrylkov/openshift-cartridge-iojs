@@ -4,21 +4,21 @@ function update_nodejs {
   if [ -f "$OPENSHIFT_REPO_DIR/.openshift/NODE_VERSION_URL" ]; then
     local VERSION_URL=$(cat $OPENSHIFT_REPO_DIR/.openshift/NODE_VERSION_URL)
   else
-    local VERSION_URL="https://semver.io/node/stable"
+    local VERSION_URL="https://semver.io/iojs/stable"
   fi
 
   local LATEST="v$(curl --silent --max-time 5 ${VERSION_URL})"
-  local NODE_URL=https://nodejs.org/dist/${LATEST}/node-${LATEST}-linux-x64.tar.gz
+  local IOJS_URL=https://iojs.org/dist/${LATEST}/iojs-${LATEST}-linux-x64.tar.gz
 
   if [ "$LATEST" = "v" ]; then
-    echo "Could not retrieve node version information from $VERSION_URL"
+    echo "Could not retrieve io.js version information from $VERSION_URL"
     return 1
   fi
 
-  # Update Node.js if necessary
+  # Update io.js if necessary
   if [ $(node --version) != ${LATEST} ]; then
     # Download
-    if ! curl -L -o ${OPENSHIFT_DATA_DIR}tmp.tgz $NODE_URL; then
+    if ! curl -L -o ${OPENSHIFT_DATA_DIR}tmp.tgz $IOJS_URL; then
       return 1
     fi
 
@@ -33,7 +33,7 @@ function update_nodejs {
     rm ${OPENSHIFT_DATA_DIR}tmp.tgz
 
     # Output result
-    echo "Node.js updated to $(node --version) with npm $(npm --version)."
+    echo "io.js updated to $(node --version) with npm $(npm --version)."
   fi
 
   # Update global npm if necessary
