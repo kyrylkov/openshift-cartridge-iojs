@@ -8,10 +8,10 @@ echo production                                > env/NODE_ENV
 echo ${OPENSHIFT_NODEJS_IP}                    > env/NODE_IP
 echo ${OPENSHIFT_NODEJS_PORT}                  > env/NODE_PORT
 echo ${OPENSHIFT_DATA_DIR}                     > env/DATA_DIR
-echo ${OPENSHIFT_DATA_DIR}.nodejs/.npm         > env/npm_config_cache
-echo ${OPENSHIFT_DATA_DIR}.nodejs/.npmrc       > env/npm_config_userconfig
-echo ${OPENSHIFT_DATA_DIR}.nodejs/.npmignore   > env/npm_config_userignorefile
-echo ${OPENSHIFT_DATA_DIR}.nodejs/.npm-init.js > env/npm_config_init_module
+echo ${OPENSHIFT_DATA_DIR}.iojs/.npm           > env/npm_config_cache
+echo ${OPENSHIFT_DATA_DIR}.iojs/.npmrc         > env/npm_config_userconfig
+echo ${OPENSHIFT_DATA_DIR}.iojs/.npmignore     > env/npm_config_userignorefile
+echo ${OPENSHIFT_DATA_DIR}.iojs/.npm-init.js   > env/npm_config_init_module
 echo ${TMP}                                    > env/npm_config_tmp
 
 update_iojs
