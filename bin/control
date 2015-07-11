@@ -25,6 +25,7 @@ function build() {
     mv -f ${TMP}node_modules ./
   fi
   npm prune
+  node-gyp-install
   npm i
   cd ${INIT_DIR}
   client_result 'io.js modules installed.'
