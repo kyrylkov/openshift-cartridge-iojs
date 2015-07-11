@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function update_nodejs {
+function update_iojs {
   if [ -f "$OPENSHIFT_REPO_DIR/.openshift/NODE_VERSION_URL" ]; then
     local VERSION_URL=$(cat $OPENSHIFT_REPO_DIR/.openshift/NODE_VERSION_URL)
   else
@@ -23,11 +23,11 @@ function update_nodejs {
     fi
 
     # Remove old files
-    rm -rf ${OPENSHIFT_DATA_DIR}.nodejs
+    rm -rf ${OPENSHIFT_DATA_DIR}.iojs
 
     # Copy binaries
-    mkdir ${OPENSHIFT_DATA_DIR}.nodejs
-    tar -xvzf ${OPENSHIFT_DATA_DIR}tmp.tgz --strip-components=1 -C ${OPENSHIFT_DATA_DIR}.nodejs
+    mkdir ${OPENSHIFT_DATA_DIR}.iojs
+    tar -xvzf ${OPENSHIFT_DATA_DIR}tmp.tgz --strip-components=1 -C ${OPENSHIFT_DATA_DIR}.iojs
 
     # Remove downloaded archive
     rm ${OPENSHIFT_DATA_DIR}tmp.tgz
