@@ -30,8 +30,8 @@ Alternatively use:
 
 ## Features
 
-- This cartridge **can** be scaled;
-- This cartridge **does not** (yet?) have a hot-deploy strategy.
+- The cartridge **can** be scaled
+- The cartridge **does not** (yet?) have a hot-deploy strategy
 
 ## Notes
 
