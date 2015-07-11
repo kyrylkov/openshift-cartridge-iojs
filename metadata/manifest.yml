@@ -1,13 +1,13 @@
 ---
 Name: iojs
-Description: Custom io.js cartridge auto-updating to the latest stable version on each build.
+Description: io.js OpenShift cartridge
 Version: '1.0.0'
 Source-Url: https://github.com/kyrylkov/openshift-cartridge-iojs.git
-License: Node.js License
-License-Url: https://raw.github.com/joyent/node/v0.12/LICENSE
+License: io.js License
+License-Url: https://raw.githubusercontent.com/nodejs/io.js/master/LICENSE
 Vendor: www.iojs.org
 Website: http://www.iojs.org/
-Display-Name: io.js Auto-Updating
+Display-Name: io.js (
 Cartridge-Short-Name: IOJS
 Cartridge-Version: '1.0.0'
 Cartridge-Vendor: kyrylkov
@@ -15,11 +15,11 @@ Categories:
 - service
 - javascript
 - nodejs
+- iojs
 - web_framework
-Help-Topics:
-  Node.js Manual & Documentation: http://nodejs.org/api/
 Provides:
 - nodejs
+- iojs
 
 Scaling:
   Min: 1
