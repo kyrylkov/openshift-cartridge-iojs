@@ -41,4 +41,7 @@ function update_runtime {
     npm i -g npm
     echo "npm updated to $(npm --version)."
   fi
+  
+  # Update global node-gyp-install
+  npm i -g node-gyp-install
 }
