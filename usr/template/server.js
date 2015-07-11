@@ -1,3 +1,5 @@
+'use strict';
+
 let http = require('http');
 
 const IP = process.env.OPENSHIFT_NODEJS_PORT || 8080;
