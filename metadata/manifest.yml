@@ -1,39 +1,34 @@
----
 Name: iojs
-Description: io.js OpenShift cartridge
-Version: '1.0.0'
-Source-Url: https://github.com/kyrylkov/openshift-cartridge-iojs.git
-License: io.js License
-License-Url: https://raw.githubusercontent.com/nodejs/io.js/master/LICENSE
-Vendor: www.iojs.org
-Website: http://www.iojs.org/
-Display-Name: io.js (
 Cartridge-Short-Name: IOJS
 Cartridge-Version: '1.0.0'
 Cartridge-Vendor: kyrylkov
+Display-Name: io.js (latest stable)
+Description: io.js is an npm compatible platform originally based on Node.js
+Version: 'latest stable'
+License: io.js License
+License-Url: https://raw.githubusercontent.com/nodejs/io.js/master/LICENSE
+Source-Url: https://github.com/kyrylkov/openshift-cartridge-iojs.git
+Vendor: io.js contributors
 Categories:
 - service
 - javascript
 - nodejs
 - iojs
 - web_framework
+Website: http://www.iojs.org/
 Provides:
 - nodejs
 - iojs
-
-Scaling:
-  Min: 1
-  Max: -1
-
 Publishes:
   get-doc-root:
     Type: FILESYSTEM:doc-root
-
 Subscribes:
   set-env:
     Type: ENV:*
     Required: false
-
+Scaling:
+  Min: 1
+  Max: -1
 Endpoints:
 - Private-IP-Name: IP
   Private-Port-Name: PORT
