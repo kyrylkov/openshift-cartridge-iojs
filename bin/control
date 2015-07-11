@@ -37,7 +37,7 @@ function start() {
     client_result 'Application is already running.'
   else
     client_message 'Starting io.js application...'
-    nohup npm start -d |& /usr/bin/logshifter -tag iojs &
+    nohup iojs server.js |& /usr/bin/logshifter -tag iojs &
     i=0
     while ! is_running && [ $i -lt 60 ]; do
       sleep 1
