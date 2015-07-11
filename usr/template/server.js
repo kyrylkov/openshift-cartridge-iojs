@@ -2,8 +2,8 @@
 
 let http = require('http');
 
-const IP = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
-const PORT = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+const IP = process.env.OPENSHIFT_IOJS_IP || '127.0.0.1';
+const PORT = process.env.OPENSHIFT_IOJS_PORT || 8080;
 
 http.createServer(function (req, res) {
   let body = 'Welcome to io.js on OpenShift!\n\nEverything seems to be in order.\n\nRunning io.js:';
