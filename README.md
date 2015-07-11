@@ -12,7 +12,7 @@ A different URL can be specified in your application repository in the `.openshi
 
 ## Why
 
-Because there is no standard OpenShift `io.js` cartridge.
+Because there is no `io.js` cartridge in OpenShift.
 
 ## When to use
 
