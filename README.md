@@ -4,9 +4,11 @@ This is a custom `io.js` cartridge that **takes care of auto-updating the `io.js
 
 By default, the `io.js` version is determined by querying [semver.io/iojs/stable](https://semver.io/iojs/stable).
 
-A different URL can be specified in your application repository in the `.openshift/IOJS_VERSION_URL` file. For instance, you'd get the **latest 1.x.x** (1.8.4 as of July 11, 2015) by putting this in `.openshift/IOJS_VERSION_URL`:
+A different URL can be specified in your application repository in the `.openshift/IOJS_VERSION_URL` file. For instance, you'd get the **latest 1.x.x** (1.8.4 as of July 11, 2015) by putting:
 
     https://semver.io/iojs/resolve/1.x.x
+    
+ in `.openshift/IOJS_VERSION_URL`
 
 ## Why
 
