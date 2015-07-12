@@ -1,6 +1,6 @@
 # io.js cartridge for OpenShift
 
-This is a `io.js` cartridge that check and if necessary **automatically updates** `io.js` and `npm` versions on each build.
+This is an `io.js` cartridge for OpenShift that checks and **automatically updates** (if necessary) `io.js` and `npm` versions on each build.
 
 The latest `io.js` version is determined by querying [semver.io/iojs/stable](https://semver.io/iojs/stable).
 
