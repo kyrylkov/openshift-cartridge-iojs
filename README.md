@@ -22,11 +22,11 @@ When you need to run your application in OpenShift using `io.js`.
 
 Go to [Choose a type of application](https://openshift.redhat.com/app/console/application_types) in your OpenShift Online account, paste the URL below into "Code Anything" textbox at the bottom of the page and click "Next":
 
-    https://raw.githubusercontent.com/kyrylkov/openshift-cartridge-iojs/master/metadata/manifest.yml
+    https://raw.githubusercontent.com/kyrylkov/openshift-iojs/master/metadata/manifest.yml
     
 Alternatively use:
 
-    rhc app create <app_name> https://raw.githubusercontent.com/kyrylkov/openshift-cartridge-iojs/master/metadata/manifest.yml
+    rhc app create <app_name> https://raw.githubusercontent.com/kyrylkov/openshift-iojs/master/metadata/manifest.yml
 
 ## Features
 
