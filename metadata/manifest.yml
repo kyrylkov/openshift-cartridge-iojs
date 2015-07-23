@@ -7,7 +7,7 @@ Description: io.js is an npm compatible platform originally based on Node.js
 Version: '2.4.0'
 License: io.js License
 License-Url: https://raw.githubusercontent.com/nodejs/io.js/master/LICENSE
-Source-Url: https://github.com/kyrylkov/openshift-cartridge-iojs.git
+Source-Url: https://github.com/kyrylkov/openshift-iojs.git
 Vendor: io.js contributors
 Categories:
 - service
