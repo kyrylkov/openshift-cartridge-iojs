@@ -1,4 +1,1 @@
-node_modules/
-*.sublime-workspace
-*.log
-.DS_Store
+node_modules
