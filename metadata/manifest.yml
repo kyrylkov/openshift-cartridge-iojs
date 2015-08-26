@@ -2,7 +2,7 @@ Name: iojs
 Cartridge-Short-Name: IOJS
 Cartridge-Version: '1.0.0'
 Cartridge-Vendor: kyrylkov
-Display-Name: io.js 3.2.0
+Display-Name: io.js latest stable
 Description: io.js is an npm compatible platform originally based on Node.js
 Version: '3.2.0'
 License: io.js License
