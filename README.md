@@ -1,3 +1,5 @@
+Looking for cartridge supporting Node.js 4.0.0+ ?  Here is one: https://github.com/ryanj/nodejs-custom-version-openshift
+
 # io.js cartridge for OpenShift
 
 This is an `io.js` cartridge for OpenShift that checks and **automatically updates** (if necessary) `io.js` and `npm` versions on each build.
