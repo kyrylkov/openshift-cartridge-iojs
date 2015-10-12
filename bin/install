@@ -24,6 +24,6 @@ mkdir "$OPENSHIFT_HOMEDIR"/.node-gyp
 chown `id -u $OPENSHIFT_GEAR_UUID` -R "$OPENSHIFT_HOMEDIR"/.npmrc "$OPENSHIFT_HOMEDIR"/.node-gyp
 npm config set tmp $OPENSHIFT_TMP_DIR
 
-npm i -g node-gyp-install
+npm i -g node-gyp
 
 client_result "io.js $(node --version) and npm $(npm --version) installed."
