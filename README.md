@@ -26,7 +26,7 @@ Go to [Choose a type of application](https://openshift.redhat.com/app/console/ap
     
 Alternatively use:
 
-    rhc app create <app_name> https://raw.githubusercontent.com/kyrylkov/openshift-iojs/master/metadata/manifest.yml
+    rhc app create <app_name> https://raw.githubusercontent.com/kyrylkov/openshift-iojs-cartridge/master/metadata/manifest.yml
 
 ## Features
 
